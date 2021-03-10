@@ -1,13 +1,19 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
 import Home from './components/Home/Home'
+import RoomJoinPage from './components/RoomJoinPage/RoomJoinPage'
+import CreateRoomPage from './components/CreateRoomPage/CreateRoomPage'
 
-function App() {
-  return (
-    <div className="App">
-      <Home />
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="main">
+              <Home />
+      </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
