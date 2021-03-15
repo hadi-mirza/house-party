@@ -23,4 +23,5 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html')),
     path('join/', TemplateView.as_view(template_name='index.html')),
     path('create/', TemplateView.as_view(template_name='index.html')),
+    path('room/<str:roomCode>', TemplateView.as_view(template_name='index.html')),
 ]
