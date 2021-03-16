@@ -11,6 +11,7 @@ export class Home extends Component {
         this.state = {
             roomCode: null,
         }
+        this.clearRoomCode = this.clearRoomCode.bind(this)
 
     }
     
@@ -46,6 +47,12 @@ export class Home extends Component {
         )
     }
 
+    clearRoomCode() {
+        this.setState({
+            roomCode: null,
+        })
+    }
+
     render() {
         return (
             <div className="Home">
@@ -56,7 +63,12 @@ export class Home extends Component {
                         }} />
                         <Route path="/join" component={RoomJoinPage} />
                         <Route path="/create" component={CreateRoomPage} />
-                        <Route path='/room/:roomCode' component={Room} />
+                        <Route 
+                        path='/room/:roomCode'
+                        render={(props) => {
+                            return <Room {...props} leaveRoomCallback={ this.clearRoomCode} />
+                        }} 
+                        />
                     </Switch>
                 </Router>
             </div>
