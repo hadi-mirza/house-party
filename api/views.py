@@ -1,3 +1,4 @@
+from django.http.response import JsonResponse
 import rest_framework
 from api.serializers import RoomSerializer, CreateRoomSerializer
 from django.db.models import query
@@ -76,3 +77,13 @@ class CreateRoomView(APIView):
                 return Response(RoomSerializer(room).data, status=status.HTTP_201_CREATED)
         
         return Response({'Bad Request': 'Invalid data...'}, status=status.HTTP_400_BAD_REQUEST)
+
+class UserInRoom(APIView):
+    def get(self, reqest, format=None):
+        if not self.request.session.exists(self.request.session.session_key):
+            self.request.session.create()
+
+        data = {
+            'code': self.request.session.get('room_code')
+        }
+        return JsonResponse(data, status=status.HTTP_200_OK)
