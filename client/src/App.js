@@ -9,7 +9,9 @@ export class App extends Component {
     return (
       <div className="App">
         <div className="main">
+          <div className="center">
               <Home />
+              </div>
       </div>
       </div>
     )
