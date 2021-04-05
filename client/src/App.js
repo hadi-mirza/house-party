@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import './App.css';
-import Home from './components/Home/Home'
-import RoomJoinPage from './components/RoomJoinPage/RoomJoinPage'
-import CreateRoomPage from './components/CreateRoomPage/CreateRoomPage'
+import React, { Component } from "react";
+import "./App.css";
+import Home from "./components/Home/Home";
+import RoomJoinPage from "./components/RoomJoinPage/RoomJoinPage";
+import CreateRoomPage from "./components/CreateRoomPage/CreateRoomPage";
 
 export class App extends Component {
   render() {
@@ -10,12 +10,12 @@ export class App extends Component {
       <div className="App">
         <div className="main">
           <div className="center">
-              <Home />
-              </div>
+            <Home />
+          </div>
+        </div>
       </div>
-      </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
